@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokepon!!</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <section class="pantalla"> 
+        <section class="titulo">
+            <picture>
+                <img class="logo" src="./images/mokepon.png" alt="mokepon" >
+            </picture>
+            <picture class="contenedor-elemento">
+                <img class="snorlax" src="./images/snorlax.png" alt="snorlax" >
+                <img class="elemento-fuego" src="./images/charmander.png" alt="elemento-fuego" >
+                <img class="elemento-tierra" src="./images/bullbasaur.png" alt="elemento-hierba" >
+                <img class="elemento-agua" src="./images/squirtle.png" alt="elemento-agua" >
+                <img class="psyduck"  src="./images/psyduck.png" alt="psyduck" >
+            </picture>
+        </section>
+        <section id="seleccion-mascota">
+            <h2 class="titulo-text" id="titulo-text">Elige tu mascota, para tu batalla Mokepon:</h2>
+            <div id="contenedorTarjetas"class="tarjetas">
+                  
+            </div>
+        </section>
+        <div class="boton">
+            <button id="boton-mascota" class="boton-luchar">A Luchar
+                <img src="./images/pokebola.png" alt="pokebola"class="pokebola" >
+            </button>
+        </div>
+        
+        <section id="ver-mapa">
+            <h3 class="titulo-text" id="titulo-text">Recorre el mapa con tu mokepon</h3>
+            <div class="control-mokepon">
+                <button class="flechas-verticales" onmouseup="detenerMovimiento()" onmousedown="moverArriba()">👆🏽 </button >
+                <button class="flechas-horizontales"  onmouseup="detenerMovimiento()" onmousedown="moverDerecha()"> 👉🏽 </button >
+                <button class="flechas-horizontales" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()"> 👈🏽</button >
+                <button class="flechas-verticales" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()"> 👇🏽 </button>
+                
+                
+                
+            </div>
+            <canvas id="mapa"></canvas>
+            
+        </section>
+        <section id="seleccion-ataque">
+            <h2 class="titulo-ataque">Elige tu ataque:</h2>
+
+            <div id="contenedorAtaques"class="botones-elementos">
+                
+            </div>
+
+            <div id="mensajes">
+                <p id="resultado">Suerte en la batalla, Maestro Mokepon</p>
+                <section id="reiniciar">
+                    <button id="boton-reiniciar" class="boton-reiniciar">Reiniciar</button>
+                </section>
+            </div>
+
+            <div class="ataques">
+                <div >
+                    <p id="vidas-jugador" class="vidas">0</p>
+                    <p id="mascota-jugador" class="mascotas"></p> 
+                    <div id="imagen-jugador">
+                        
+                    </div>
+                    <div id="ataque-del-jugador" class="ataqueJugador"></div>
+                </div>
+                <div>
+                    <p id="vidas-enemigo"  class="vidas">0</p>
+                    <p id="mascota-enemigo"  class="mascotas"></p>
+                    <div id="imagen-enemigo">
+
+                    </div> 
+                    <div id="ataque-del-enemigo" class="ataqueEnemigo"></div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="./mokepon.js" ></script>
+</body>
+</html>

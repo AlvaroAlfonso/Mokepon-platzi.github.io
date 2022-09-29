@@ -1,0 +1,535 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+html, body {
+    min-height: 100%;
+}
+body {
+ 
+  font-family: "Poppins", sans-serif;
+  background-image: url(./images/fondo.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 70vw;
+}
+
+/* NORMALIZACION*/
+input{display: none;
+}
+
+input:checked + label {
+    background: linear-gradient(0deg, rgba(65 204 165) 13%, rgba(206, 241, 255) 86%);
+    padding: 10px;
+    border-radius: 15px;
+    color: #f52424;
+    -webkit-text-stroke: #000000;
+}
+
+
+
+.boton-de-ataque:hover{
+    
+background: linear-gradient(0deg, rgba(226, 119, 119, 0.685) 0%, rgba(241, 168, 33, 0.692) 100%);
+}
+.flechas-horizontales:hover{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.685) 0%, rgba(120, 255, 248, 0.692) 100%);
+}
+
+.flechas-verticales:hover{
+    background: linear-gradient(0deg,rgba(120, 255, 248, 0.692)   0%,  rgba(255, 255, 255, 0.685)100%);
+}
+
+.boton-reiniciar:hover, .boton-luchar:hover{
+  
+    background: linear-gradient(0deg, rgba(255, 0, 0, 0.473) 21%, rgba(107, 97, 83, 0.701) 86%);
+}
+
+* {
+    margin:0;
+    box-sizing:border-box;
+}
+.pantalla{
+    background-color: rgb(254 199 255 / 42%);
+    margin: 150px 100px;
+    border-radius: 50px;
+    background-color: #10100f94;
+    padding-bottom: 30px;
+}
+
+.titulo{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    width:20vw;
+}
+.contenedor-elemento {
+    display: flex;
+    gap: 18px;
+    background-color: #00ed0333;
+    border: 2px solid #673ab7;
+    box-shadow: 2px 2px 22px 2px rgb(33 225 183);
+    padding: 10px;
+    border-radius: 20px;
+}
+.titulo-text{
+    text-align: center;
+    font-size:2vw;
+    padding: 20px 0px;
+    color: antiquewhite;
+    -webkit-text-stroke: 1.5px rgb(24, 19, 24);
+}
+
+            
+canvas{
+    width: 50vw;
+    margin:3vw 0vw;
+    border-radius:2vw
+}
+.mascota-mokepon{
+    width: 5vw;
+}
+#seleccion-mascota{
+    gap: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 80px;
+    flex-direction: column;
+    align-items: center;
+}
+.imagen-batalla, .imagen-jugador{
+    width: 6vw;
+}
+#imagen-jugador , #imagen-enemigo{
+    margin: 10px;
+}
+
+#ver-mapa{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#mapa{
+    border:solid 2px red;
+}
+
+.tarjetas-de-mokepon {
+    color: #ffffff;
+    -webkit-text-stroke: 0.1px #ffeb3b;
+    border: solid 2px #489fb3;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    font-weight: bold;
+    gap: 10px;
+    justify-content: space-around;
+    background-color:#00ed0333;
+}
+
+
+
+.boton{
+    display:flex;
+    justify-content: center;
+   
+ 
+}
+.boton-luchar{
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255 84 127);
+    border: 2px solid rgb(35 113 175);
+    box-shadow: rgb(236 210 117) 2px 2px 22px 2px;
+    padding: 20px;
+    border-radius: 20px;
+    color: rgb(251, 207, 0);
+    font-weight: bold;
+    font-size: 2.5vw;
+    -webkit-text-stroke: 1px rgb(49, 96, 180);
+}
+.pokebola{
+    width: 3.5vw;
+}
+
+#seleccion-ataque{
+    
+    flex-direction: column;
+    align-items: center;
+}
+.titulo-ataque{
+    text-align: center;
+    font-size: 2.8vw;
+    color: #fbcd06;
+    -webkit-text-stroke: 2px #1b4f7e;
+}
+.botones-elementos{
+    display: flex;
+    gap: 60px;
+    margin: 60px 0px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+.boton-de-ataque{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aca4dfa3;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: #9c27b0;
+    width: 15vw;
+    color: #ffffff;
+    gap:10px;
+    font-size: 2.0vw;
+    font-weight: bold;
+    -webkit-text-stroke: 1px rgb(180, 49, 169);
+
+    
+}
+.psyduck{
+    width: 4vw;
+    background-color: #ffd400;
+    border: 2px solid rgb(179 134 21);
+    padding: 2px;
+    border-radius: 50px;
+}
+.snorlax{
+    width: 4vw;
+    background-color: #1f5079;
+    border: 2px solid rgb(4 147 218);
+    padding: 2px;
+    border-radius: 50px;
+}
+.elemento-fuego{
+    width: 4vw;
+    background-color: #ff8080;
+    border: 2px solid rgb(249, 23, 23);
+    padding: 2px;
+    border-radius: 50px;
+}
+.elemento-agua{
+    width: 4vw;
+    background-color: #6ad7ee;
+    border: 2px solid rgb(23, 177, 249);
+    padding: 2px;
+    border-radius: 50px;
+}
+.elemento-tierra{
+    width: 4vw;
+    background-color: #1cb24b;
+    border: 2px solid rgb(68, 249, 23);
+    padding: 2px;
+    border-radius: 50px;
+}
+
+
+#mensajes{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    width: 35vw;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    background-color: #7dbdf787;
+    border: 2px solid #9c27b0;
+    -webkit-text-stroke: 1.5px rgb(171 83 132);
+}
+.tarjetas{
+    display: flex;
+    gap: 30px;
+}
+
+.boton-reiniciar{
+    font-size: 3vw;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #a248ad61;
+    border: 2px solid rgba(255, 255, 255, 0.772);
+    box-shadow: 2px 2px 22px 2px rgba(255, 255, 255, 0.295);
+    margin-top: 15px;
+}
+p .resultado{
+    margin-top: 10px;
+}
+.ataques{
+    text-align: center;
+    display: grid;
+    color: white;
+    grid-template-columns: 300px 300px;
+    justify-items: center;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: stretch;
+    margin: 30px;
+    border: solid 2px #cfcd8e;
+    padding: 10px;
+    box-shadow: 2px 2px 22px 2px rgb(245 179 179);
+}
+.flechas-horizontales{
+font-size:3vw;
+padding: 0px 12px 20px 5px;
+border: solid 2px black;
+border-radius: 10px;
+}
+.control-mokepon{
+    display: grid;
+    grid-template-rows: 5vw 5vw; 
+    grid-template-columns: 5vw 5vw;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+.flechas-verticales{
+    font-size:3vw;
+    padding: 5px 12px 14px 13px;
+    border: solid 2px black;
+    border-radius: 10px;
+    }
+.vidas{
+    font-size: 4vw;
+    font-weight: bold;
+    -webkit-text-stroke: 2px rgb(49, 96, 180);
+    color: #fbcd06;
+}
+.mascotas{
+    font-size: 2vw;
+    font-weight: bold;
+    color: rgb(255, 146, 146);
+    -webkit-text-stroke: 1px rgb(85, 86, 88);
+}
+.ataqueJugador, .ataqueEnemigo{
+    font-size: 2vw;
+    font-weight: bold;
+    color: #fbcd06;
+    -webkit-text-stroke: 1px  rgb(49, 96, 180);
+}
+@media (max-width:480px){
+    body{
+      width: 100vw;
+    }
+
+    .logo{
+        width: 50vw;
+    }
+    .elemento-tierra, .elemento-fuego, .elemento-agua, .psyduck, .snorlax{
+        width: 12vw;
+    }
+    .contenedor-elemento{
+        gap: 2vw;
+    }
+    .pantalla{
+        margin: 25px 25px;
+    }
+    .titulo-text{
+        font-size: 4.5vw;
+        -webkit-text-stroke: 1px rgb(24, 19, 24);
+        padding: 20px 10px;
+    }
+    .tarjetas-de-mokepon p{
+        font-size: 4vw;
+    }
+    .tarjetas{
+        flex-direction: column;   
+    }
+    .mascota-mokepon{
+        width: 20.5vw;
+    }
+    #seleccion-mascota{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .boton-luchar{
+        font-size: 6.5vw;
+        -webkit-text-stroke: 1px rgb(49, 96, 180);
+    }
+    .titulo-ataque{
+        font-size: 6.0vw;
+        -webkit-text-stroke: 1px #1b4f7e;
+    }
+    .botones-elementos{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+   
+    #mensajes{
+        width: 65vw;
+        font-size: 4.5vw;
+        -webkit-text-stroke: 1px rgb(171 83 132);
+    }
+    .boton-reiniciar{
+        width: 35vw;
+        font-size: 5vw;
+    }
+
+    .ataques{
+        display: grid;
+        grid-template-columns: 35vw 35vw;
+        border-radius: 30px;
+    }
+    .imagen-batalla, .imagen-jugador{
+        width: 25vw;
+    }
+    .vidas{
+        font-size: 8.5vw;
+        -webkit-text-stroke: 1px rgb(49, 96, 180);
+    }
+    .mascotas{
+        font-size: 4.0vw;
+    }
+    .ataqueJugador, .ataqueEnemigo{
+        font-size: 5.0vw;
+        -webkit-text-stroke:  1px  rgb(49, 96, 180);
+    }
+    .boton-de-ataque{
+        gap: 4px;
+        width: 35vw;
+        font-size: 5vw;
+    }
+    canvas{
+        width: 80vw;
+        margin: 3vw 0vw 15vw;
+    }
+    .flechas-horizontales, .flechas-verticales{
+        font-size: 6vw;
+        border-radius: 0px;
+    }
+    .control-mokepon{
+        grid-template-rows: 12vw 12vw;
+        grid-template-columns: 12vw 12vw;
+        column-gap: 6px;
+        row-gap: 6px;
+    }
+   
+    
+}
+@media (min-width:481px) and (max-width:780px){
+    body{
+        width: 100vw;
+    }
+    .pantalla{
+        margin: 130px 40px;
+    }
+    .logo{
+        width: 45vw;
+        padding-top: 50px;
+    }
+    .elemento-agua, .elemento-fuego, .elemento-tierra, .snorlax, .psyduck{
+        width: 8vw;
+    }
+    .botones-elementos{
+        gap: 20px;
+        grid-template-columns: 160px 160px;
+    }
+    #seleccion-mascota{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .tarjetas{
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .titulo-text{
+        font-size: 4.0vw;
+        padding: 20px 0px;
+    }
+    .tarjetas-de-mokepon p{
+        font-size: 3vw;
+    }
+    .mascota-mokepon{
+        width: 12.5vw;
+    }
+    .boton-luchar{
+    width: 50vw;
+    justify-content: center;
+    font-size: 6vw;
+    -webkit-text-stroke: 1px rgb(49, 96, 180);
+ }
+    .pokebola{
+        width: 6.5vw;
+    }
+    .titulo-ataque{
+        font-size: 6vw;
+        -webkit-text-stroke: 1px #1b4f7e;
+
+    }
+ .ataques{
+        grid-template-columns: 200px 200px;
+    }
+    .vidas{
+        font-size: 8.5vw;
+        -webkit-text-stroke: 1.5px rgb(49, 96, 180);
+    }
+    
+    #mensajes{
+        font-size: 4vw;
+        -webkit-text-stroke: 1px rgb(171 83 132);
+    }
+    .boton-reiniciar{
+        width: 25vw;
+        font-size: 4.5vw;
+    }
+
+    .mascotas{
+        font-size: 4vw;
+    }
+    .ataqueEnemigo,.ataqueJugador{
+        font-size: 4vw;
+    }
+    .boton-de-ataque{
+        width: 22vw;
+        font-size: 3.5vw;
+        gap: 1vw;
+    }
+    canvas{
+        width: 80vw;
+        margin: 3vw 0vw 10vw;
+    }
+    .flechas-horizontales, .flechas-verticales{
+        font-size: 5vw;
+        border-radius: 0px;
+    }
+    .control-mokepon{
+        grid-template-rows: 10vw 10vw;
+        grid-template-columns: 10vw 10vw;
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+}
+
+@media (min-width:781px) and (max-width:2200px){
+    .tarjetas{
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .boton-de-ataque{
+        padding: 12px;
+        gap: 5px;
+        width: 7vw;
+    }
+    .botones-elementos{
+        gap: 23px 45px;
+    }
+}
